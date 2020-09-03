@@ -13,7 +13,55 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun calculatedCalorie(view: View) {
+    fun onClickButtonCalculate(view: View) {
+        if (validation()) {
+            textView2.text = getCalculatedCalorie()
+        }
+    }
+
+    // метод отвечает за валидацию входных данных
+    private fun validation(): Boolean {
+        return when {
+            // валидация поля роста
+            editTextTextPersonHeight.text.toString().isEmpty() -> {
+                editTextTextPersonHeight.error = "Рост не может быть пустым"
+                false
+            }
+            editTextTextPersonHeight.text.toString().toInt() !in 130..210 -> {
+                editTextTextPersonHeight.error = "Рост может быть в пределах от 130 до 210"
+                false
+            }
+
+            // валидация поля веса
+            editTextTextPersonWeight.text.toString().isEmpty() -> {
+                editTextTextPersonWeight.error = "Вес не может быть пустым"
+                false
+            }
+            editTextTextPersonWeight.text.toString().toInt() !in 30..200 -> {
+                editTextTextPersonWeight.error = "Вес может быть в перелах от 30 до 200"
+                false
+            }
+
+            // валидация поля возраста
+            editTextTextPersonAge.text.toString().isEmpty() -> {
+                editTextTextPersonAge.error = "Возраст не может быть пустым"
+                false
+            }
+            editTextTextPersonAge.text.toString().toInt() !in 1..100 -> {
+                editTextTextPersonAge.error = "Возраст может быть в пределах от 1 до 100"
+                false
+            }
+
+            !radioButtonMale.isChecked and !radioButtonFemale.isChecked -> {
+                createCustomToast("Выберите пол", Toast.LENGTH_SHORT, Gravity.CENTER, 0,0)
+                false
+            }
+
+            else -> true
+        }
+    }
+
+    private fun getCalculatedCalorie(): String {
         // константы для расчета BMR по формуле Харриса – Бенедикта
         val constMale = arrayOf(66.5, 13.75, 5.003, 6.755)
         val constFemale = arrayOf(655.1, 9.563, 1.85, 4.676)
@@ -21,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         val height = editTextTextPersonHeight.text.toString().toInt()
         val weight = editTextTextPersonWeight.text.toString().toInt()
         val age = editTextTextPersonAge.text.toString().toInt()
+
         var pal = 0.0 // уровень активности человека
         when (spinnerActionLevel.selectedItemId.toInt()) {
             0 -> pal = 1.2
@@ -37,13 +86,15 @@ class MainActivity : AppCompatActivity() {
             radioButtonFemale.isChecked -> {
                 calorie = (constFemale[0] + (constFemale[1] * weight) + (constFemale[2] * height) - (constFemale[3] * age)) * pal
             }
-            else -> {
-                val errorGenderToast = Toast.makeText(this, "выберите пол", Toast.LENGTH_SHORT)
-                errorGenderToast.setGravity(Gravity.CENTER, 0, 0)
-                errorGenderToast.show()
-            }
         }
 
-        textView2.text = calorie.toInt().toString()
+        return calorie.toInt().toString()
+    }
+
+    // Создание кастомного Toast
+    private fun createCustomToast(text: String, toastLength: Int, gravity: Int, xOffset: Int, yOffset: Int) {
+        val customToast = Toast.makeText(this, text, toastLength)
+        customToast.setGravity(gravity, xOffset, yOffset)
+        customToast.show()
     }
 }

@@ -12,6 +12,14 @@
     <string name="MainText">Расчет калорий</string>
     <string name="beginKkal">0</string>
 
+    <string name="errorHeightNull">Рост не может быть пустым</string>
+    <string name="errorHeightLimit">Рост может быть в пределах от 130 до 210</string>
+    <string name="errorWeightNull">Вес не может быть пустым</string>
+    <string name="errorWeightLimit">Вес может быть в перелах от 30 до 200</string>
+    <string name="errorAgeNull">Возраст не может быть пустым</string>
+    <string name="errorAgeLimit">Возраст может быть в пределах от 1 до 100</string>
+    <string name="errorChooseGender">Выберите пол</string>
+
     <string-array name="ActionLevels">
         <item>Низкий (никаких физических нагрузок)</item>
         <item>Средний (физические нагрузки 3–5 раз в неделю)</item>

@@ -46,36 +46,36 @@ class MainActivity : AppCompatActivity() {
         return when {
             // валидация поля роста
             editTextTextPersonHeight.text.toString().isEmpty() -> {
-                editTextTextPersonHeight.error = "Рост не может быть пустым"
+                editTextTextPersonHeight.error = resources.getString(R.string.errorHeightNull)
                 false
             }
             editTextTextPersonHeight.text.toString().toInt() !in 130..210 -> {
-                editTextTextPersonHeight.error = "Рост может быть в пределах от 130 до 210"
+                editTextTextPersonHeight.error = resources.getString(R.string.errorHeightLimit)
                 false
             }
 
             // валидация поля веса
             editTextTextPersonWeight.text.toString().isEmpty() -> {
-                editTextTextPersonWeight.error = "Вес не может быть пустым"
+                editTextTextPersonWeight.error = resources.getString(R.string.errorWeightNull)
                 false
             }
             editTextTextPersonWeight.text.toString().toInt() !in 30..200 -> {
-                editTextTextPersonWeight.error = "Вес может быть в перелах от 30 до 200"
+                editTextTextPersonWeight.error = ""
                 false
             }
 
             // валидация поля возраста
             editTextTextPersonAge.text.toString().isEmpty() -> {
-                editTextTextPersonAge.error = "Возраст не может быть пустым"
+                editTextTextPersonAge.error = resources.getString(R.string.errorAgeNull)
                 false
             }
             editTextTextPersonAge.text.toString().toInt() !in 1..100 -> {
-                editTextTextPersonAge.error = "Возраст может быть в пределах от 1 до 100"
+                editTextTextPersonAge.error = resources.getString(R.string.errorAgeLimit)
                 false
             }
 
             !radioButtonMale.isChecked and !radioButtonFemale.isChecked -> {
-                createCustomToast("Выберите пол", Toast.LENGTH_SHORT, Gravity.CENTER, 0,0)
+                createCustomToast(resources.getString(R.string.errorChooseGender), Toast.LENGTH_SHORT, Gravity.CENTER, 0,0)
                 false
             }
 

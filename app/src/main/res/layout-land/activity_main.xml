@@ -158,7 +158,6 @@
         android:id="@+id/buttonCalculate"
         android:layout_width="165dp"
         android:layout_height="43dp"
-        android:onClick="onClickButtonCalculate"
         android:text="@string/Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

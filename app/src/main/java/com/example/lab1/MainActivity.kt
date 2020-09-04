@@ -2,21 +2,43 @@ package com.example.lab1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val stateString: String = "stateString" // ключ для сохранения переменной нормы калорий
+    }
+
+    private var mCalorie: String? = null // поле для хранения нормы калорий
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mCalorie = textView2.text.toString()
+
+        buttonCalculate.setOnClickListener {
+            if (validation()) {
+                mCalorie = getCalculatedCalorie()
+                textView2.text = mCalorie
+            }
+        }
     }
 
-    fun onClickButtonCalculate(view: View) {
-        if (validation()) {
-            textView2.text = getCalculatedCalorie()
-        }
+    override fun onSaveInstanceState(outState: Bundle) { // метод для сохранения нормы калорий при уничтожени активности
+        super.onSaveInstanceState(outState)
+        mCalorie = textView2.text.toString()
+        outState?.putString(stateString, mCalorie)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) { // метод для восстановления нормы калорий при уничтожени активности
+        super.onRestoreInstanceState(savedInstanceState)
+        mCalorie = savedInstanceState.getString(stateString)
+        textView2.text = mCalorie
     }
 
     // метод отвечает за валидацию входных данных

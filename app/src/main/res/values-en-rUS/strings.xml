@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lab1</string>
+    <string name="TextView1" translatable="true">Estimated daily calorie count</string>
+    <string name="Height" translatable="true">Height (in cm)</string>
+    <string name="Weight" translatable="true">Weight (in kg)</string>
+    <string name="Age" translatable="true">Age (in years)</string>
+    <string name="Calculate" translatable="true">Calculate</string>
+    <string name="ActionLevel" translatable="true">Level of activity</string>
+    <string name="Male" translatable="true">Male</string>
+    <string name="Female" translatable="true">Female</string>
+    <string name="gender" translatable="true">Gender</string>
+    <string name="MainText" translatable="true">Calorie Calculation</string>
+    <string name="beginKkal" translatable="true">0</string>
+
+    <string name="errorHeightNull">Height cannot be empty</string>
+    <string name="errorHeightLimit">Height may range from 130 to 210</string>
+    <string name="errorWeightNull">Weight cannot be empty</string>
+    <string name="errorWeightLimit">Weight may range from 30 to 200</string>
+    <string name="errorAgeNull">Age cannot be empty</string>
+    <string name="errorAgeLimit">Age may range from 1 to 100</string>
+    <string name="errorChooseGender">Choose gender</string>
+
+    <string-array name="ActionLevels">
+        <item>Low (no physical activity)</item>
+        <item>Average (physical activity 3-5 times per week)</item>
+        <item>High (daily physical activity)</item>
+    </string-array>
+</resources>

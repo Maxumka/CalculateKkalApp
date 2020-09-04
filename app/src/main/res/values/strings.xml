@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">lab1</string>
-    <string name="TextView1">Ваше суточное потребление килокалорий для поддержании текущей массы тела</string>
+    <string name="TextView1">Примерная суточная норма калорий</string>
     <string name="Height">Рост (в см)</string>
     <string name="Weight">Вес (в кг)</string>
     <string name="Age">Возраст (в годах)</string>
@@ -9,6 +9,8 @@
     <string name="Male">Мужчина</string>
     <string name="Female">Женщина</string>
     <string name="gender">Пол</string>
+    <string name="MainText">Расчет калорий</string>
+    <string name="beginKkal">0</string>
 
     <string-array name="ActionLevels">
         <item>Низкий (никаких физических нагрузок)</item>

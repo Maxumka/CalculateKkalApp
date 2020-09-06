@@ -15,11 +15,11 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.651"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonWeight"
+        app:layout_constraintStart_toEndOf="@+id/editTextPersonWeight"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewCalorie"
         android:layout_width="163dp"
         android:layout_height="85dp"
         android:layout_marginTop="0dp"
@@ -28,11 +28,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonAge"
+        app:layout_constraintStart_toEndOf="@+id/editTextPersonAge"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <EditText
-        android:id="@+id/editTextTextPersonHeight"
+        android:id="@+id/editTextPersonHeight"
         android:layout_width="473dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -48,7 +48,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonWeight"
+        android:id="@+id/editTextPersonWeight"
         android:layout_width="473dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -61,11 +61,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonHeight"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonHeight"
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonAge"
+        android:id="@+id/editTextPersonAge"
         android:layout_width="473dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonWeight"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonWeight"
         tools:ignore="LabelFor" />
 
     <Spinner
@@ -104,7 +104,7 @@
         android:text="@string/ActionLevel"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonAge" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -142,7 +142,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonAge" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
 
     <Button
         android:id="@+id/buttonCalculate"

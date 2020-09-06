@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lab1</string>
+    <string name="app_name">Расчет килокалорий</string>
     <string name="TextView1">Примерная суточная норма калорий</string>
     <string name="Height">Рост (в см)</string>
     <string name="Weight">Вес (в кг)</string>
@@ -10,6 +10,9 @@
     <string name="Female">Женщина</string>
     <string name="gender">Пол</string>
     <string name="MainText">Расчет калорий</string>
+    <string name="MainTextLosingWeight">Расчет калорий для сброса веса</string>
+    <string name="MainTextMaintainingWeight">Расчет калорий для поддержания веса</string>
+    <string name="MainTextGainingWeight">Расчет калорий для набора веса</string>
     <string name="beginKkal">0</string>
 
     <string name="errorHeightNull">Рост не может быть пустым</string>
@@ -25,4 +28,9 @@
         <item>Средний (физические нагрузки 3–5 раз в неделю)</item>
         <item>Высокий (ежедневные физические нагрузки)</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">lab1</string>
+    <string name="app_name">Calculation of kilocalories</string>
     <string name="TextView1" translatable="true">Estimated daily calorie count</string>
     <string name="Height" translatable="true">Height (in cm)</string>
     <string name="Weight" translatable="true">Weight (in kg)</string>
@@ -11,6 +11,9 @@
     <string name="Female" translatable="true">Female</string>
     <string name="gender" translatable="true">Gender</string>
     <string name="MainText" translatable="true">Calorie Calculation</string>
+    <string name="MainTextLosingWeight">Calorie calculation for weight loss</string>
+    <string name="MainTextMaintainingWeight">Calorie calculation for weight maintenance</string>
+    <string name="MainTextGainingWeight">Calorie calculation for weight gain</string>
     <string name="beginKkal" translatable="true">0</string>
 
     <string name="errorHeightNull">Height cannot be empty</string>
@@ -23,7 +26,7 @@
 
     <string-array name="ActionLevels">
         <item>Low (no physical activity)</item>
-        <item>Average (physical activity 3-5 times per week)</item>
+        <item>Average (physical activity 3–5 times per week)</item>
         <item>High (daily physical activity)</item>
     </string-array>
 </resources>

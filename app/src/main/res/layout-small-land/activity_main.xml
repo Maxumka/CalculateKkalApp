@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewCalorie"
         android:layout_width="110dp"
         android:layout_height="28dp"
         android:text="@string/beginKkal"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonHeight"
+        android:id="@+id/editTextPersonHeight"
         android:layout_width="356dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
@@ -51,7 +51,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonWeight"
+        android:id="@+id/editTextPersonWeight"
         android:layout_width="356dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
@@ -64,11 +64,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.633"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonHeight"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonHeight"
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonAge"
+        android:id="@+id/editTextPersonAge"
         android:layout_width="356dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.633"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonWeight"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonWeight"
         tools:ignore="LabelFor" />
 
     <Spinner
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonAge" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -148,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonAge"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button

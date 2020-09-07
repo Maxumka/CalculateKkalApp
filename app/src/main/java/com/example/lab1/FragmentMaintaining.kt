@@ -38,7 +38,6 @@ class FragmentMaintaining : Fragment() {
 
         textViewCalorie = view.textViewCalorie
 
-
         view.buttonCalculate.setOnClickListener {
             textViewCalorie.text = getCalculatedCalorie()
         }

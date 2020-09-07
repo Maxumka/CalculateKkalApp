@@ -6,167 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="345dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/TextView1"
-        android:textSize="32sp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
-        app:layout_constraintStart_toEndOf="@+id/editTextPersonWeight"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textViewCalorie"
-        android:layout_width="163dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="0dp"
-        android:text="@string/beginKkal"
-        android:textSize="64sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toEndOf="@+id/editTextPersonAge"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
-    <EditText
-        android:id="@+id/editTextPersonHeight"
-        android:layout_width="473dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/Height"
-        android:inputType="number"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="LabelFor" />
-
-    <EditText
-        android:id="@+id/editTextPersonWeight"
-        android:layout_width="473dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/Weight"
-        android:inputType="number"
-        android:text=""
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonHeight"
-        tools:ignore="LabelFor" />
-
-    <EditText
-        android:id="@+id/editTextPersonAge"
-        android:layout_width="473dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/Age"
-        android:inputType="number"
-        android:text=""
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonWeight"
-        tools:ignore="LabelFor" />
-
-    <Spinner
-        android:id="@+id/spinnerActionLevel"
-        style="@style/Widget.AppCompat.Spinner.Underlined"
-        android:layout_width="315dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:entries="@array/ActionLevels"
-        android:prompt="@string/ActionLevel"
-        android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/ActionLevel"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="315dp"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toEndOf="@+id/spinnerActionLevel"
-        app:layout_constraintTop_toBottomOf="@+id/textView9">
-
-        <RadioButton
-            android:id="@+id/radioButtonMale"
-            android:layout_width="110dp"
-            android:layout_height="43dp"
-            android:text="@string/Male" />
-
-        <RadioButton
-            android:id="@+id/radioButtonFemale"
-            android:layout_width="110dp"
-            android:layout_height="43dp"
-            android:text="@string/Female" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/gender"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.002"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPersonAge" />
-
-    <Button
-        android:id="@+id/buttonCalculate"
-        android:layout_width="237dp"
-        android:layout_height="65dp"
-        android:text="@string/Calculate"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.402"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.449" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/MainText"
-        android:textSize="64sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.mikepenz.materialize.view.ScrimInsetsFrameLayout
+        android:id="@+id/fr_main"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

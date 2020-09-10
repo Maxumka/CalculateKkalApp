@@ -15,6 +15,19 @@
     <string name="MainTextGainingWeight">Расчет калорий для набора веса</string>
     <string name="beginKkal">0</string>
 
+    <string name="TypeCalculateLose">Сброс веса </string>
+    <string name="TypeCalculateMaintain">Поддержка веса </string>
+    <string name="TypeCalculateGain">Набор веса</string>
+
+    <string name="ResultCalculate">Резльтат: </string>
+    <string name="TypeCalculate">Тип расчета: </string>
+    <string name="Date">Дата: </string>
+
+    <string name="ToolBarLose">Сброс веса</string>
+    <string name="ToolBarMaintain">Поддержание веса</string>
+    <string name="ToolbarGain">Набор веса</string>
+    <string name="HistoryCalculate">История расчетов</string>
+
     <string name="errorHeightNull">Рост не может быть пустым</string>
     <string name="errorHeightLimit">Рост может быть в пределах от 130 до 210</string>
     <string name="errorWeightNull">Вес не может быть пустым</string>
@@ -28,9 +41,5 @@
         <item>Средний (физические нагрузки 3–5 раз в неделю)</item>
         <item>Высокий (ежедневные физические нагрузки)</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

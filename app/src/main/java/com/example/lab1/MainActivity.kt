@@ -1,12 +1,9 @@
 package com.example.lab1
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
 import android.view.View
-import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
@@ -14,6 +11,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val HISTORY_KEY = "history"
+    }
+
+    private var mHistories: java.util.ArrayList<HistoryRecord>? = java.util.ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         createDrawer()
     }
 
+    fun addToHistories(historyRecord: HistoryRecord) { mHistories?.add(historyRecord) }
+
     // создание Drawer для toolbar, использована библиотека mikepenz/MaterialDrawer
     private fun createDrawer() {
         DrawerBuilder()
@@ -36,13 +41,16 @@ class MainActivity : AppCompatActivity() {
             .addDrawerItems( // добавляем пункты меню
                 PrimaryDrawerItem()
                     .withIdentifier(0)
-                    .withName("Сброс веса"),
+                    .withName(getString(R.string.ToolBarLose)),
                 PrimaryDrawerItem()
                     .withIdentifier(1)
-                    .withName("Поддержание веса"),
+                    .withName(getString(R.string.ToolBarMaintain)),
                 PrimaryDrawerItem()
                     .withIdentifier(2)
-                    .withName("Набор веса")
+                    .withName(getString(R.string.ToolbarGain)),
+                PrimaryDrawerItem()
+                    .withIdentifier(3)
+                    .withName(getString(R.string.HistoryCalculate))
             )
             .withOnDrawerItemClickListener(object: Drawer.OnDrawerItemClickListener { // создаем слушателя для пунктов меню
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
@@ -67,6 +75,11 @@ class MainActivity : AppCompatActivity() {
                                 .addToBackStack(null)
                                 .replace(R.id.fr_main, FragmentGaining())
                                 .commit()
+                        }
+                        3 -> {
+                            val intent = Intent(applicationContext, HistoryActivity::class.java)
+                            intent.putExtra(HISTORY_KEY, mHistories)
+                            startActivity(intent)
                         }
                     }
                     return false

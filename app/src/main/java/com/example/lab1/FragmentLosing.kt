@@ -10,9 +10,13 @@ import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_losing.view.*
+import java.text.DateFormat
+import java.util.*
 import kotlin.random.Random
 
 class FragmentLosing : Fragment() {
+
+    private lateinit var mCalorie: String
 
     private lateinit var editTextPersonHeight: EditText
     private lateinit var editTextPersonWeight: EditText
@@ -38,7 +42,6 @@ class FragmentLosing : Fragment() {
         radioButtonFemale = view.radioButtonFemale
 
         textViewCalorie = view.textViewCalorie
-
 
         view.buttonCalculate.setOnClickListener {
             textViewCalorie.text = getCalculatedCalorie()
@@ -74,6 +77,14 @@ class FragmentLosing : Fragment() {
             }
         }
 
-        return (calorie.toInt() - Random.nextInt(200, 250)).toString()
+        mCalorie = (calorie.toInt() - Random.nextInt(200, 250)).toString()
+        addHistoryRecord()
+        return mCalorie
+    }
+
+    private fun addHistoryRecord() {
+        val mainActivity = activity as? MainActivity
+        val dateFormat = DateFormat.getDateTimeInstance() // получаю формат даты и времени
+        mainActivity?.addToHistories(HistoryRecord(mCalorie, getString(R.string.TypeCalculateLose), dateFormat.format(Date())))
     }
 }

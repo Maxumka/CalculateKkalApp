@@ -10,8 +10,12 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_maintaining.view.*
+import java.text.DateFormat
+import java.util.*
 
 class FragmentMaintaining : Fragment() {
+
+    private lateinit var mCalorie: String
 
     private lateinit var editTextPersonHeight: EditText
     private lateinit var editTextPersonWeight: EditText
@@ -72,6 +76,15 @@ class FragmentMaintaining : Fragment() {
             }
         }
 
-        return calorie.toInt().toString()
+        mCalorie = calorie.toInt().toString()
+        addHistoryRecord()
+        return mCalorie
     }
+
+    private fun addHistoryRecord() {
+        val mainActivity = activity as? MainActivity
+        val dateFormat = DateFormat.getDateTimeInstance() // получаю формат даты и времени
+        mainActivity?.addToHistories(HistoryRecord(mCalorie, getString(R.string.TypeCalculateMaintain), dateFormat.format(Date())))
+    }
+
 }

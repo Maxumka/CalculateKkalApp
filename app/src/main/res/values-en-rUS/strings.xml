@@ -16,6 +16,19 @@
     <string name="MainTextGainingWeight">Calorie calculation for weight gain</string>
     <string name="beginKkal" translatable="true">0</string>
 
+    <string name="TypeCalculateLose">Losing weight</string>
+    <string name="TypeCalculateMaintain">Maintaining weight</string>
+    <string name="TypeCalculateGain">Gaining weight</string>
+
+    <string name="ResultCalculate">Result: </string>
+    <string name="TypeCalculate">Type calculating: </string>
+    <string name="Date">Date: </string>
+
+    <string name="ToolBarLose">Losing weight</string>
+    <string name="ToolBarMaintain">Maintaining weight</string>
+    <string name="ToolbarGain">Gaining weight</string>
+    <string name="HistoryCalculate">Calculation history</string>
+
     <string name="errorHeightNull">Height cannot be empty</string>
     <string name="errorHeightLimit">Height may range from 130 to 210</string>
     <string name="errorWeightNull">Weight cannot be empty</string>

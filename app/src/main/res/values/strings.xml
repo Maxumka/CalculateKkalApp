@@ -42,4 +42,11 @@
         <item>Высокий (ежедневные физические нагрузки)</item>
     </string-array>
 
+
+    <string name="StartServiceStepCount">Начать подсчет шагов</string>
+    <string name="StopServiceStepCount">Закончить подсчет шагов</string>
+    <string name="TextViewStepCount">Подсчет шагов</string>
+    <string name="LinkWiki">https://ru.qwe.wiki/wiki/Harris%E2%80%93Benedict_equation</string>
+    <string name="OpenLink">Открыть</string>
+
 </resources>

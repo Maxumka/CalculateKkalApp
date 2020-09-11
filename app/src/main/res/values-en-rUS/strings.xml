@@ -37,6 +37,12 @@
     <string name="errorAgeLimit">Age may range from 1 to 100</string>
     <string name="errorChooseGender">Choose gender</string>
 
+    <string name="StartServiceStepCount">Start counting the steps</string>
+    <string name="StopServiceStepCount">Stop counting the steps</string>
+    <string name="TextViewStepCount">Step counting</string>
+    <string name="LinkWiki">https://ru.qwe.wiki/wiki/Harris%E2%80%93Benedict_equation</string>
+    <string name="OpenLink">Open</string>
+
     <string-array name="ActionLevels">
         <item>Low (no physical activity)</item>
         <item>Average (physical activity 3–5 times per week)</item>

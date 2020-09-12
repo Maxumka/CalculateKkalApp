@@ -2,11 +2,13 @@ package com.example.lab1
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private var mHistories: java.util.ArrayList<HistoryRecord>? = java.util.ArrayList()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +34,16 @@ class MainActivity : AppCompatActivity() {
             .commit()
         createDrawer()
 
+        // выбираю цвет тулбара в зависимости от настроек
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val color = when(pref.getString("toolbar_color", "")) {
+            "Red" -> Color.RED
+            "Green" -> Color.GREEN
+            "Blue" -> Color.BLUE
+            else -> Color.CYAN
+        }
+        toolbar.setBackgroundColor(color)
+
         // Запрос на использование Google Fit API
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACTIVITY_RECOGNITION)
             != PackageManager.PERMISSION_GRANTED) {
@@ -38,7 +51,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun addToHistories(historyRecord: HistoryRecord) { mHistories?.add(historyRecord) }
+    fun addToHistories(historyRecord: HistoryRecord) {
+        mHistories?.add(historyRecord)
+        val dbManager = DBManager(this)
+        dbManager.open()
+        dbManager.insert(historyRecord)
+        dbManager.close()
+    }
 
     // создание Drawer для toolbar, использована библиотека mikepenz/MaterialDrawer
     private fun createDrawer() {
@@ -65,7 +84,16 @@ class MainActivity : AppCompatActivity() {
                     .withName(getString(R.string.TextViewStepCount)),
                 PrimaryDrawerItem()
                     .withIdentifier(5)
-                    .withName("Больше о методе расчета калорий")
+                    .withName("Больше о методе расчета калорий"),
+                PrimaryDrawerItem()
+                    .withIdentifier(6)
+                    .withName("История расчетов из БД"),
+                PrimaryDrawerItem()
+                    .withIdentifier(7)
+                    .withName("История работы службы из файла"),
+                PrimaryDrawerItem()
+                    .withIdentifier(8)
+                    .withName("Настройки")
             )
             .withOnDrawerItemClickListener(object: Drawer.OnDrawerItemClickListener { // создаем слушателя для пунктов меню
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
@@ -108,6 +136,27 @@ class MainActivity : AppCompatActivity() {
                                 .beginTransaction()
                                 .addToBackStack(null)
                                 .replace(R.id.fr_main, FragmentBrowserCall())
+                                .commit()
+                        }
+                        6 -> {
+                            supportFragmentManager
+                                .beginTransaction()
+                                .addToBackStack(null)
+                                .replace(R.id.fr_main, FragmentDb())
+                                .commit()
+                        }
+                        7 -> {
+                            supportFragmentManager
+                                .beginTransaction()
+                                .addToBackStack(null)
+                                .replace(R.id.fr_main, FragmentFileService())
+                                .commit()
+                        }
+                        8 -> {
+                            supportFragmentManager
+                                .beginTransaction()
+                                .addToBackStack(null)
+                                .replace(R.id.fr_main, FragmentSettings())
                                 .commit()
                         }
                     }

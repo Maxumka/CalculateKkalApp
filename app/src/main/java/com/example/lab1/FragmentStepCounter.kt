@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_step_counter.view.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class FragmentStepCounter : Fragment() {
 
@@ -21,10 +26,23 @@ class FragmentStepCounter : Fragment() {
     }
 
     // Использую Broadcast так как надо получить данные в фрагмент из службы
-    private  var mReceiver: BroadcastReceiver = object: BroadcastReceiver() {
+    private var mReceiver: BroadcastReceiver = object: BroadcastReceiver() {
         override fun onReceive(p0: Context?, p1: Intent?) {
             mStepCount = p1?.extras?.getFloat(KEY_STEP_COUNT) ?: 0f
+            writeFile()
             mTextViewStepCount.text = mStepCount.toInt().toString()
+        }
+
+        fun writeFile() {
+            val fileDir: File = context!!.filesDir
+            val file = File(fileDir, "test.txt")
+            try {
+                file.appendText("Step count = $mStepCount\n")
+                    Log.d("TestFile", "Step count = $mStepCount")
+            }
+            catch (e: IOException) {
+                Log.d("TestFile", e.toString())
+            }
         }
     }
 

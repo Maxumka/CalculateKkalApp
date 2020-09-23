@@ -1,9 +1,9 @@
-package com.example.lab1
+package com.example.lab1.view
 
-import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lab1.R
 
 class CatchIntentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

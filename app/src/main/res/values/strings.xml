@@ -9,13 +9,11 @@
     <string name="Male">Мужчина</string>
     <string name="Female">Женщина</string>
     <string name="gender">Пол</string>
-    <string name="MainText">Расчет калорий</string>
     <string name="MainTextLosingWeight">Расчет калорий для сброса веса</string>
     <string name="MainTextMaintainingWeight">Расчет калорий для поддержания веса</string>
     <string name="MainTextGainingWeight">Расчет калорий для набора веса</string>
     <string name="beginKkal">0</string>
 
-    <string name="TypeCalculateLose">Сброс веса </string>
     <string name="TypeCalculateMaintain">Поддержка веса </string>
     <string name="TypeCalculateGain">Набор веса</string>
 
@@ -28,20 +26,14 @@
     <string name="ToolbarGain">Набор веса</string>
     <string name="HistoryCalculate">История расчетов</string>
 
-    <string name="errorHeightNull">Рост не может быть пустым</string>
-    <string name="errorHeightLimit">Рост может быть в пределах от 130 до 210</string>
-    <string name="errorWeightNull">Вес не может быть пустым</string>
-    <string name="errorWeightLimit">Вес может быть в перелах от 30 до 200</string>
-    <string name="errorAgeNull">Возраст не может быть пустым</string>
-    <string name="errorAgeLimit">Возраст может быть в пределах от 1 до 100</string>
-    <string name="errorChooseGender">Выберите пол</string>
+    <string name="low_level">Низкий (никаких физических нагрузок)</string>
+    <string name="mid_level">Средний (физические нагрузки 3–5 раз в неделю)</string>
+    <string name="hard_level">Высокий (ежедневные физические нагрузки)</string>
 
-    <string-array name="ActionLevels">
-        <item>Низкий (никаких физических нагрузок)</item>
-        <item>Средний (физические нагрузки 3–5 раз в неделю)</item>
-        <item>Высокий (ежедневные физические нагрузки)</item>
-    </string-array>
 
+    <array name="ActionLevels">
+
+    </array>
 
     <string name="StartServiceStepCount">Начать подсчет шагов</string>
     <string name="StopServiceStepCount">Закончить подсчет шагов</string>
@@ -54,22 +46,5 @@
         <item>Green</item>
         <item>Blue</item>
     </string-array>
-    
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

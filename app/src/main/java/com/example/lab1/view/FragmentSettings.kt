@@ -1,9 +1,8 @@
-package com.example.lab1
+package com.example.lab1.view
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
+import com.example.lab1.R
 
 class FragmentSettings : PreferenceFragmentCompat() {
 

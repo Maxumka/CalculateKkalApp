@@ -1,11 +1,10 @@
-package com.example.lab1
+package com.example.lab1.view
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.os.Environment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.lab1.R
+import com.example.lab1.model.service.ServiceStepCounter
 import kotlinx.android.synthetic.main.fragment_step_counter.view.*
 import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
 
 class FragmentStepCounter : Fragment() {

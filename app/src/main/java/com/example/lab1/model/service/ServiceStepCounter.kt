@@ -1,4 +1,4 @@
-package com.example.lab1
+package com.example.lab1.model.service
 
 import android.app.Service
 import android.content.Context
@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.IBinder
 import android.util.Log
+import com.example.lab1.view.FragmentStepCounter
 import kotlinx.coroutines.*
 
 class ServiceStepCounter : Service(), SensorEventListener {

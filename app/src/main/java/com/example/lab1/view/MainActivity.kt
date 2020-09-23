@@ -1,4 +1,4 @@
-package com.example.lab1
+package com.example.lab1.view
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
+import com.example.lab1.R
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
@@ -16,13 +17,6 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    companion object {
-        const val HISTORY_KEY = "history"
-    }
-
-    private var mHistories: java.util.ArrayList<HistoryRecord>? = java.util.ArrayList()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,14 +43,6 @@ class MainActivity : AppCompatActivity() {
             != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION), 1)
         }
-    }
-
-    fun addToHistories(historyRecord: HistoryRecord) {
-        mHistories?.add(historyRecord)
-        val dbManager = DBManager(this)
-        dbManager.open()
-        dbManager.insert(historyRecord)
-        dbManager.close()
     }
 
     // создание Drawer для toolbar, использована библиотека mikepenz/MaterialDrawer
@@ -121,7 +107,6 @@ class MainActivity : AppCompatActivity() {
                         }
                         3 -> {
                             val intent = Intent(applicationContext, HistoryActivity::class.java)
-                            intent.putExtra(HISTORY_KEY, mHistories)
                             startActivity(intent)
                         }
                         4 -> {

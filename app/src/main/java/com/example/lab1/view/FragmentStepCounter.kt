@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.lab1.R
+import com.example.lab1.model.blogic.FileBLogic
 import com.example.lab1.model.service.ServiceStepCounter
 import kotlinx.android.synthetic.main.fragment_step_counter.view.*
 import java.io.File
@@ -25,26 +26,7 @@ class FragmentStepCounter : Fragment() {
         const val KEY_STEP_COUNT = "keyStepCount"
     }
 
-    // Использую Broadcast так как надо получить данные в фрагмент из службы
-    private var mReceiver: BroadcastReceiver = object: BroadcastReceiver() {
-        override fun onReceive(p0: Context?, p1: Intent?) {
-            mStepCount = p1?.extras?.getFloat(KEY_STEP_COUNT) ?: 0f
-            writeFile()
-            mTextViewStepCount.text = mStepCount.toInt().toString()
-        }
-
-        fun writeFile() {
-            val fileDir: File = context!!.filesDir
-            val file = File(fileDir, "test.txt")
-            try {
-                file.appendText("Step count = $mStepCount\n")
-                    Log.d("TestFile", "Step count = $mStepCount")
-            }
-            catch (e: IOException) {
-                Log.d("TestFile", e.toString())
-            }
-        }
-    }
+    private lateinit var mFileBLogic: FileBLogic
 
     private lateinit var mTextViewStepCount: TextView
 
@@ -52,6 +34,15 @@ class FragmentStepCounter : Fragment() {
     private lateinit var mButtonStop: Button
 
     private var mStepCount: Float = 0f
+
+    // Использую Broadcast так как надо получить данные в фрагмент из службы
+    private var mReceiver: BroadcastReceiver = object: BroadcastReceiver() {
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            mStepCount = p1?.extras?.getFloat(KEY_STEP_COUNT) ?: 0f
+            mFileBLogic.writeFile("Step count = $mStepCount\n")
+            mTextViewStepCount.text = mStepCount.toInt().toString()
+        }
+    }
 
     override fun onResume() {
         super.onResume()
@@ -65,6 +56,8 @@ class FragmentStepCounter : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater.inflate(R.layout.fragment_step_counter, container, false)
+
+        mFileBLogic = FileBLogic(activity!!.applicationContext)
 
         mButtonStart = view.button_start_service
         mButtonStop = view.button_stop_service

@@ -48,6 +48,7 @@
                 android:layout_marginStart="152dp"
                 android:layout_marginLeft="152dp"
                 android:layout_marginTop="20dp"
+                android:onClick="@{() -> viewModel.clearFile()}"
                 android:text="Delete file"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_show_file" />

@@ -9,7 +9,7 @@ class FragmentFileServiceViewModel(app: Application): AndroidViewModel(app) {
 
     private val context = getApplication<Application>().applicationContext
 
-    private val mFileBLogic = FileBLogic("test.txt")
+    private val mFileBLogic = FileBLogic(context)
 
     private var _fileInfo = MutableLiveData<String>()
     val mFileInfo: MutableLiveData<String> = _fileInfo
@@ -18,5 +18,7 @@ class FragmentFileServiceViewModel(app: Application): AndroidViewModel(app) {
         mFileInfo.value = mFileBLogic.readFile()
     }
 
-
+    fun clearFile() {
+        mFileBLogic.clearFile()
+    }
 }

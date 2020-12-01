@@ -79,7 +79,10 @@ class MainActivity : AppCompatActivity() {
                     .withName("История работы службы из файла"),
                 PrimaryDrawerItem()
                     .withIdentifier(8)
-                    .withName("Настройки")
+                    .withName("Настройки"),
+                PrimaryDrawerItem()
+                    .withIdentifier(9)
+                    .withName("Анимации")
             )
             .withOnDrawerItemClickListener(object: Drawer.OnDrawerItemClickListener { // создаем слушателя для пунктов меню
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
@@ -142,6 +145,13 @@ class MainActivity : AppCompatActivity() {
                                 .beginTransaction()
                                 .addToBackStack(null)
                                 .replace(R.id.fr_main, FragmentSettings())
+                                .commit()
+                        }
+                        9 -> {
+                            supportFragmentManager
+                                .beginTransaction()
+                                .addToBackStack(null)
+                                .replace(R.id.fr_main, FragmentAnimation())
                                 .commit()
                         }
                     }
